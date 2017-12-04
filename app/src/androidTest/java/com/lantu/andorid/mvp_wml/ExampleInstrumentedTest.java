@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.lantu.andorid.mvp_wml", appContext.getPackageName());
+        assertEquals("com.lantu.andorid.mvp_wml_test", appContext.getPackageName());
     }
 }
