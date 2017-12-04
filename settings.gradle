@@ -1,0 +1,1 @@
+include ':app', ':tinkerLib', 'patternlockview', ':shareutil', ':gsyVideoPlayer-java'

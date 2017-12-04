@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>学会用饮食改变自己</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<style type="text/css">
+	html{
+		height: 100%
+	}
+	body{
+		height: 100%;
+		background: #eceef3;
+		margin: 0;
+	}
+	#intro{
+		padding: 1rem .68rem;
+		background: #fff;
+		font-size: .30rem;
+		font-family: '微软雅黑';
+		color: #5c5c5c;
+		line-height: 200%;
+		height:100%;
+	}
+	.item{
+		margin: 8rem;
+	}
+</style>
+<body>
+<div class="cvr bg" onclick="var video=document.getElementById('video');video.webkitEnterFullscreen();video.play();">
+<video id="video" data-mvid="5382080" src="http://baobab.wdjcdn.com/14564977406580.mp4" width="100%" height="100%">
+</video>
+</div>
+<div id="intro">How diet causes type 2 diabetes
+There are several factors that can affect blood glucose levels, including exercise, hormones and illness. The most important factor, however, is diet. Managing diabetes is first and foremost about what you eat.
+如何饮食会导致2型糖尿病：
+有几个因素会影响血糖水平,包括运动、激素和疾病。然而,最重要的因素是饮食。糖尿病管理首先是你吃什么。
+
+Side dish #1: Alcohol
+Calories come in three main forms: fat, protein and carbohydrate, but alcohol is also a source and should only provide a very tiny proportion of your calories.
+配菜# 1:酒精
+热量有三种主要形式:脂肪,蛋白质和碳水化合物,但酒精也是一个来源，但是提供的卡路里较少。
+</div>
+</body>
+<script>
+	var viewport = document.querySelector("meta[name=viewport]");
+	var winWidths=window.innerWidth;
+	var densityDpi=640/winWidths;
+	  densityDpi= densityDpi>1?300*640*densityDpi/640:densityDpi;
+	if(isWeixin()){
+	  viewport.setAttribute('content', 'width=640, target-densityDpi='+densityDpi);
+	}
+	function isWeixin(){
+	  var ua = navigator.userAgent.toLowerCase();
+	  if(ua.match(/MicroMessenger/i)=="micromessenger") {
+	  return true;
+	  } else {
+	  return false;
+	  }
+	}
+	document.getElementsByTagName('html')[0].style.fontSize = window.innerWidth / 10 + 'px';
+</script>
+</html>
