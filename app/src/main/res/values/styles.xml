@@ -101,23 +101,6 @@
         <item name="progress_unreached_bar_height">1dp</item>
     </style>
 
-
-    <!-- 底部弹出框 -->
-    <style name="BottomDialog" parent="@android:style/Theme.Dialog">
-        <item name="android:windowTitleStyle">@null</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="android:windowAnimationStyle">@style/BottomDialog.AnimationStyle</item>
-        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
-    </style>
-
-    <style name="BottomDialog.AnimationStyle" parent="android:Animation">
-        <item name="android:windowEnterAnimation">@anim/slide_bottom_entry</item>
-        <item name="android:windowExitAnimation">@anim/slide_bottom_exit</item>
-    </style>
-
-
-
     <style name="webtoolBar">
         <item name="colorControlNormal">#ffffff</item>
         <item name="android:homeAsUpIndicator">@mipmap/cha</item>

@@ -92,4 +92,5 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.6'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    compile project(':nicedialog')
 }

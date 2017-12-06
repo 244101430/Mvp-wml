@@ -9,6 +9,11 @@ import com.lantu.andorid.mvp_wml.injector.components.DaggerShareComponent;
 import com.lantu.andorid.mvp_wml.injector.modules.ShareModule;
 import com.lantu.andorid.mvp_wml.ui.base.BaseSwipeBackActivity;
 import com.lantu.andorid.mvp_wml.ui.dialog.ShareBottomDialog;
+import com.othershe.nicedialog.BaseNiceDialog;
+import com.othershe.nicedialog.NiceDialog;
+import com.othershe.nicedialog.ViewConvertListener;
+import com.othershe.nicedialog.ViewHolder;
+
 import butterknife.OnClick;
 import me.shaohui.shareutil.login.LoginPlatform;
 import me.shaohui.shareutil.login.LoginResult;
@@ -113,6 +118,18 @@ public class ShareActivity extends BaseSwipeBackActivity<ISharePresenter> implem
     public void showShareDialog() {
         ShareBottomDialog dialog = new ShareBottomDialog();
         dialog.show(getSupportFragmentManager());
+
+        NiceDialog.init()
+                .setLayoutId(R.layout.layout_bottom_share)
+                .setConvertListener(new ViewConvertListener() {
+                    @Override
+                    protected void convertView(ViewHolder holder, BaseNiceDialog dialog) {
+
+                    }
+                })
+                .setShowBottom(true)
+                .show(getSupportFragmentManager());
+
     }
 
 }
