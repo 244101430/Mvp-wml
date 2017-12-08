@@ -14,6 +14,7 @@ import com.lantu.andorid.mvp_wml.ui.base.BaseFragment;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
 import com.lantu.andorid.mvp_wml.ui.icontest.IconSwitchActivity;
 import com.lantu.andorid.mvp_wml.ui.other.ScrollViewActivity;
+import com.lantu.andorid.mvp_wml.ui.share.ShareActivity;
 
 
 import java.util.List;
@@ -65,9 +66,11 @@ public class IndexFragment extends BaseFragment<IBasePresenter> implements IInde
 //                ShareActivity.launcher(getActivity());
 //                CommonWebActivity.launcer(getActivity(), "http://zhangwenyue.kingifa.com/src/static/VenuePreheating/Meeting.html");
 
-                IconSwitchActivity.launcher(getActivity());
+//                IconSwitchActivity.launcher(getActivity());
 
 //                ScrollViewActivity.launcher(getActivity());
+
+                ShareActivity.launcher(getActivity());
 
             }
         });

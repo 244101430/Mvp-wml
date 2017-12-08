@@ -14,7 +14,7 @@ import rx.functions.Action0;
  * Created by wml8743 on 2017/10/10.
  */
 
-public class IndexPresenter implements IBasePresenter{
+public class IndexPresenter implements IBasePresenter {
 
     private IIndexView mView;
     private String mNewsId;
@@ -27,45 +27,46 @@ public class IndexPresenter implements IBasePresenter{
 
     @Override
     public void getData(final boolean isRefresh) {
-        RetrofitService.getNewsList(mNewsId, mPage).doOnSubscribe(new Action0() {
-            @Override
-            public void call() {
-                if (!isRefresh) {
-                    mView.showLoading();
-                }
-            }
-        })
-        .subscribe(new Subscriber<List<NewsInfo>>() {
-            @Override
-            public void onCompleted() {
+        RetrofitService.getNewsList(mNewsId, mPage)
+                .doOnSubscribe(new Action0() {
+                    @Override
+                    public void call() {
+                        if (!isRefresh) {
+                            mView.showLoading();
+                        }
+                    }
+                })
+                .subscribe(new Subscriber<List<NewsInfo>>() {
+                    @Override
+                    public void onCompleted() {
 
 
-                if (isRefresh) {
-                    mView.finishRefresh();
-                } else {
-                    mView.hideLoading();
-                }
-            }
+                        if (isRefresh) {
+                            mView.finishRefresh();
+                        } else {
+                            mView.hideLoading();
+                        }
+                    }
 
-            @Override
-            public void onError(Throwable e) {
-                mPage = 0;
+                    @Override
+                    public void onError(Throwable e) {
+                        mPage = 0;
 
-                if (isRefresh) {
-                    mView.finishRefresh();
-                    // 可以提示对应的信息，但不更新界面
-                    ToastUtils.showToast("刷新失败提示什么根据实际情况");
-                } else {
-                    mView.showNetError();
-                }
-            }
+                        if (isRefresh) {
+                            mView.finishRefresh();
+                            // 可以提示对应的信息，但不更新界面
+                            ToastUtils.showToast("刷新失败提示什么根据实际情况");
+                        } else {
+                            mView.showNetError();
+                        }
+                    }
 
-            @Override
-            public void onNext(List<NewsInfo> newsInfos) {
-                mView.loadData(newsInfos);
-                mPage++;
-            }
-        })
+                    @Override
+                    public void onNext(List<NewsInfo> newsInfos) {
+                        mView.loadData(newsInfos);
+                        mPage++;
+                    }
+                })
         ;
     }
 

@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lantu.andorid.mvp_wml.R;
+import com.lantu.andorid.mvp_wml.injector.components.DaggerProductFragmentComponment;
+import com.lantu.andorid.mvp_wml.injector.modules.ProductFragmentModule;
 import com.lantu.andorid.mvp_wml.ui.base.BaseFragment;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
 import com.lantu.andorid.mvp_wml.utils.IconUtils;
@@ -15,7 +17,7 @@ import butterknife.BindView;
 /**
  * create an instance of this fragment.
  */
-public class ProductFragment extends BaseFragment<IBasePresenter> {
+public class ProductFragment extends BaseFragment<IBasePresenter> implements IProductFragmentView{
     @BindView(R.id.textView)
     TextView textView;
 
@@ -39,7 +41,10 @@ public class ProductFragment extends BaseFragment<IBasePresenter> {
 
     @Override
     protected void initInjector() {
-
+        DaggerProductFragmentComponment.builder()
+                .productFragmentModule(new ProductFragmentModule(this))
+                .build()
+                .inject(this);
     }
 
     @Override
@@ -49,7 +54,7 @@ public class ProductFragment extends BaseFragment<IBasePresenter> {
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    IconUtils.switchIcon(getContext(), IconUtils.ICON_TAG_1212);
+                    mPresenter.getData(false);
                 }
             });
         }
@@ -57,7 +62,13 @@ public class ProductFragment extends BaseFragment<IBasePresenter> {
 
     @Override
     protected void updateViews(boolean isRefresh) {
-
+        mPresenter.getData(isRefresh);
     }
 
+    @Override
+    public void loadPageData(String str) {
+        if (textView != null){
+            textView.setText(str);
+        }
+    }
 }
