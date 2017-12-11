@@ -14,6 +14,7 @@ import com.lantu.andorid.mvp_wml.api.RetrofitService;
 import com.lantu.andorid.mvp_wml.injector.components.ApplicationComponent;
 import com.lantu.andorid.mvp_wml.injector.components.DaggerApplicationComponent;
 import com.lantu.andorid.mvp_wml.injector.modules.ApplicationModule;
+import com.lantu.andorid.mvp_wml.rxbus.RxBus;
 import com.lantu.andorid.mvp_wml.utils.IconUtils;
 import com.lantu.andorid.mvp_wml.utils.Logger;
 import com.lantu.andorid.mvp_wml.utils.ToastUtils;
@@ -38,7 +39,7 @@ public class AndroidApplication extends DefaultApplicationLike {
     private boolean isForeground; // 是否在前台 true=处于前台，false=处于后台
     private static String IOCN_VERSION_CODE = ""; // 桌面图标版本
 
-
+    private RxBus mRxBus = new RxBus();
     public AndroidApplication(Application application, int tinkerFlags, boolean tinkerLoadVerifyFlag, long applicationStartElapsedTime, long applicationStartMillisTime, Intent tinkerResultIntent) {
         super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime, applicationStartMillisTime, tinkerResultIntent);
 
@@ -73,7 +74,7 @@ public class AndroidApplication extends DefaultApplicationLike {
     private void _initInjector() {
         // 这里不做注入操作，只提供一些全局单例数据
         sAppComponent = DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(this))
+                .applicationModule(new ApplicationModule(this, mRxBus))
                 .build();
     }
 

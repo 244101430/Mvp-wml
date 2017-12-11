@@ -11,7 +11,7 @@ import dagger.Component;
  * Created by wml8743 on 2017/12/7.
  */
 @PerFragment
-@Component(modules = InformationFragmentModule.class)
+@Component(dependencies = ApplicationComponent.class, modules = InformationFragmentModule.class)
 public interface InformationFragmentComponent {
     void inject(InformationFragment fragment);
 }

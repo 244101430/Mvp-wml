@@ -1,7 +1,9 @@
 package com.lantu.andorid.mvp_wml.injector.modules;
 
 import com.lantu.andorid.mvp_wml.injector.PerFragment;
+import com.lantu.andorid.mvp_wml.rxbus.RxBus;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
+import com.lantu.andorid.mvp_wml.ui.home.information.IInformationFragmentPresenter;
 import com.lantu.andorid.mvp_wml.ui.home.information.InformationFragment;
 import com.lantu.andorid.mvp_wml.ui.home.information.InformationFragmentPresenter;
 
@@ -21,7 +23,7 @@ public class InformationFragmentModule {
 
     @PerFragment
     @Provides
-    public IBasePresenter providePresenter(){
-        return new InformationFragmentPresenter(mInfromationFragmentView);
+    public IInformationFragmentPresenter providePresenter(RxBus rxBus){
+        return new InformationFragmentPresenter(mInfromationFragmentView, rxBus);
     }
 }

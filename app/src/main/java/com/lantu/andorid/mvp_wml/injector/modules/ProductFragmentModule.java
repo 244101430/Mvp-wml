@@ -1,7 +1,9 @@
 package com.lantu.andorid.mvp_wml.injector.modules;
 
 import com.lantu.andorid.mvp_wml.injector.PerFragment;
+import com.lantu.andorid.mvp_wml.rxbus.RxBus;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
+import com.lantu.andorid.mvp_wml.ui.base.IRxBusPresenter;
 import com.lantu.andorid.mvp_wml.ui.home.information.InformationFragmentPresenter;
 import com.lantu.andorid.mvp_wml.ui.home.product.ProductFragment;
 import com.lantu.andorid.mvp_wml.ui.home.product.ProductFragmentPresenter;
@@ -16,14 +18,13 @@ import dagger.Provides;
 public class ProductFragmentModule {
     private final ProductFragment mView;
 
-
     public ProductFragmentModule(ProductFragment mView) {
         this.mView = mView;
     }
 
     @PerFragment
     @Provides
-    public IBasePresenter providePresenter(){
-        return new ProductFragmentPresenter(mView);
+    public IRxBusPresenter providePresenter(RxBus rxBus){
+        return new ProductFragmentPresenter(mView, rxBus);
     }
 }

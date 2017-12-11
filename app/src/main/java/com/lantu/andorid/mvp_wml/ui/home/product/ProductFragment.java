@@ -8,16 +8,20 @@ import android.widget.TextView;
 import com.lantu.andorid.mvp_wml.R;
 import com.lantu.andorid.mvp_wml.injector.components.DaggerProductFragmentComponment;
 import com.lantu.andorid.mvp_wml.injector.modules.ProductFragmentModule;
+import com.lantu.andorid.mvp_wml.rxbus.event.TestEvent;
 import com.lantu.andorid.mvp_wml.ui.base.BaseFragment;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
+import com.lantu.andorid.mvp_wml.ui.base.IRxBusPresenter;
+import com.lantu.andorid.mvp_wml.ui.home.index.IndexFragment;
 import com.lantu.andorid.mvp_wml.utils.IconUtils;
 
 import butterknife.BindView;
+import rx.functions.Action1;
 
 /**
  * create an instance of this fragment.
  */
-public class ProductFragment extends BaseFragment<IBasePresenter> implements IProductFragmentView{
+public class ProductFragment extends BaseFragment<IRxBusPresenter> implements IProductFragmentView {
     @BindView(R.id.textView)
     TextView textView;
 
@@ -42,6 +46,7 @@ public class ProductFragment extends BaseFragment<IBasePresenter> implements IPr
     @Override
     protected void initInjector() {
         DaggerProductFragmentComponment.builder()
+                .applicationComponent(getAppComponent())
                 .productFragmentModule(new ProductFragmentModule(this))
                 .build()
                 .inject(this);
@@ -49,7 +54,17 @@ public class ProductFragment extends BaseFragment<IBasePresenter> implements IPr
 
     @Override
     protected void initViews() {
-        if (textView != null){
+        mPresenter.registerRxBus(TestEvent.class, new Action1<TestEvent>() {
+            @Override
+            public void call(TestEvent testEvent) {
+                if (testEvent.checkStatus == TestEvent.CHECK_PRODUCTFRAGMENT) {
+                    if (textView != null) {
+                        textView.setText("TestEvent.CHECK_PRODUCTFRAGMENT");
+                    }
+                }
+            }
+        });
+        if (textView != null) {
             textView.setText("修改图标二");
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -67,7 +82,7 @@ public class ProductFragment extends BaseFragment<IBasePresenter> implements IPr
 
     @Override
     public void loadPageData(String str) {
-        if (textView != null){
+        if (textView != null) {
             textView.setText(str);
         }
     }

@@ -8,6 +8,8 @@ import android.widget.TextView;
 import com.lantu.andorid.mvp_wml.R;
 import com.lantu.andorid.mvp_wml.injector.components.DaggerInformationFragmentComponent;
 import com.lantu.andorid.mvp_wml.injector.modules.InformationFragmentModule;
+import com.lantu.andorid.mvp_wml.rxbus.RxBus;
+import com.lantu.andorid.mvp_wml.rxbus.event.TestEvent;
 import com.lantu.andorid.mvp_wml.ui.base.BaseFragment;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
 import com.lantu.andorid.mvp_wml.utils.IconUtils;
@@ -16,12 +18,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 
 /**
  * create an instance of this fragment.
  */
-public class InformationFragment extends BaseFragment<IBasePresenter> implements IInformationFragmentView{
+public class InformationFragment extends BaseFragment<IInformationFragmentPresenter> implements IInformationFragmentView{
 
     @BindView(R.id.textView)
     TextView textView;
@@ -47,6 +51,7 @@ public class InformationFragment extends BaseFragment<IBasePresenter> implements
     @Override
     protected void initInjector() {
         DaggerInformationFragmentComponent.builder()
+                .applicationComponent(getAppComponent())
                 .informationFragmentModule(new InformationFragmentModule(this))
                 .build()
                 .inject(this);
@@ -59,7 +64,8 @@ public class InformationFragment extends BaseFragment<IBasePresenter> implements
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+//                    mPresenter.getData(true);
+                    mPresenter.refreshProductView();
                 }
             });
         }

@@ -1,1 +1,1 @@
-include ':app', ':tinkerLib', 'patternlockview', ':shareutil', ':gsyVideoPlayer-java'
+include ':app', ':tinkerLib', 'patternlockview', ':shareutil', ':gsyVideoPlayer-java', ':nicedialog'

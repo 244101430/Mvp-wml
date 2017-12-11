@@ -23,6 +23,7 @@ import com.lantu.andorid.mvp_wml.R;
 import com.lantu.andorid.mvp_wml.injector.components.ApplicationComponent;
 import com.lantu.andorid.mvp_wml.injector.modules.ActivityModule;
 import com.lantu.andorid.mvp_wml.receiver.NetBroadcastReceiver;
+import com.lantu.andorid.mvp_wml.ui.home.MainActivity;
 import com.lantu.andorid.mvp_wml.utils.NavUtils;
 import com.lantu.andorid.mvp_wml.utils.NetUtil;
 import com.lantu.andorid.mvp_wml.utils.StringUtils;
@@ -332,8 +333,15 @@ public abstract class BaseActivity<T extends IBasePresenter> extends RxAppCompat
             fragmentTransaction.addToBackStack(tag);
             fragmentTransaction.commit();
         } else {
-            // 存在则弹出在它上面的所有fragment，并显示对应fragment
-            getSupportFragmentManager().popBackStack(tag, 0);
+            if (this instanceof MainActivity) {//防止首页切换fragment被移除
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(containerViewId, getSupportFragmentManager().findFragmentByTag(tag));
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.commit();
+            } else {
+                // 存在则弹出在它上面的所有fragment，并显示对应fragment
+                getSupportFragmentManager().popBackStack(tag, 0);
+            }
         }
     }
 
@@ -350,10 +358,10 @@ public abstract class BaseActivity<T extends IBasePresenter> extends RxAppCompat
     public void onNetChange(boolean isNet) {
         if (isNet) {
             if (mNetView != null)
-            mNetView.setVisibility(View.GONE);
+                mNetView.setVisibility(View.GONE);
         } else {
             if (mNetView != null)
-            mNetView.setVisibility(View.VISIBLE);
+                mNetView.setVisibility(View.VISIBLE);
         }
     }
 
