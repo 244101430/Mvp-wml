@@ -80,6 +80,11 @@
             android:hardwareAccelerated="true" />
         <activity android:name=".ui.icontest.IconSwitchActivity" />
         <activity android:name=".ui.other.ScrollViewActivity" />
+        <activity
+            android:name=".ui.video.VideoActivity"
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -7,7 +7,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import com.lantu.andorid.mvp_wml.R;
-import com.lantu.andorid.mvp_wml.ui.icontest.IconSwitchActivity;
 import com.lantu.andorid.mvp_wml.widget.SwipeBackLayout;
 
 /**

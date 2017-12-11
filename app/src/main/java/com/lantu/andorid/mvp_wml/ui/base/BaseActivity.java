@@ -95,6 +95,9 @@ public abstract class BaseActivity<T extends IBasePresenter> extends RxAppCompat
     @Nullable
     @BindView(R.id.common_head_right2)
     protected ImageView mIvCommonRight2;    // 右边第二个按钮
+    @Nullable
+    @BindView(R.id.common_head_title)
+    protected TextView mTvTitle;    // 标题控件
 
 
     @Override
@@ -145,6 +148,16 @@ public abstract class BaseActivity<T extends IBasePresenter> extends RxAppCompat
         onClickByView(mIvCommonRight2);
         onClickByView(mLlCommonRight2);
         initViews();
+    }
+
+    /**
+     * 设置header标题
+     * @param title
+     */
+    protected void initHeadTitle(String title){
+        if (mTvTitle != null){
+            mTvTitle.setText(title);
+        }
     }
 
     /**
