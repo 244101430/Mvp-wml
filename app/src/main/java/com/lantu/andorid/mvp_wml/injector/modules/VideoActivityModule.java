@@ -3,6 +3,7 @@ package com.lantu.andorid.mvp_wml.injector.modules;
 import com.lantu.andorid.mvp_wml.injector.PerActivity;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
 import com.lantu.andorid.mvp_wml.ui.base.IBaseView;
+import com.lantu.andorid.mvp_wml.ui.video.IVideoActivityPresenter;
 import com.lantu.andorid.mvp_wml.ui.video.VideoActivityPresenter;
 
 import dagger.Module;
@@ -22,7 +23,7 @@ public class VideoActivityModule {
 
     @PerActivity
     @Provides
-    public IBasePresenter providePersenter(){
+    public IVideoActivityPresenter providePersenter(){
         return new VideoActivityPresenter(mView);
     }
 }

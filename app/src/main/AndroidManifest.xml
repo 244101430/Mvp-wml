@@ -82,9 +82,10 @@
         <activity android:name=".ui.other.ScrollViewActivity" />
         <activity
             android:name=".ui.video.VideoActivity"
-            android:launchMode="singleTop"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.audio.AudioActivity"></activity>
     </application>
 
 </manifest>

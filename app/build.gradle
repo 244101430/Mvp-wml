@@ -58,6 +58,7 @@ dependencies {
     // adapter适配器
     compile project(':nicedialog')
     compile project(':gsyVideoPlayer-java')
+    compile 'com.android.support:multidex:'
     compile 'com.just.agentwebX5:agentwebX5:1.0.0'
     compile 'me.shaohui:bottomdialog:1.1.9'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -94,5 +95,4 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.6'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
-    compile 'com.android.support:multidex:'
 }
