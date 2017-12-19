@@ -15,6 +15,7 @@ import com.lantu.andorid.mvp_wml.injector.components.ApplicationComponent;
 import com.lantu.andorid.mvp_wml.injector.components.DaggerApplicationComponent;
 import com.lantu.andorid.mvp_wml.injector.modules.ApplicationModule;
 import com.lantu.andorid.mvp_wml.rxbus.RxBus;
+import com.lantu.andorid.mvp_wml.ui.audio.AudioPlayerManager;
 import com.lantu.andorid.mvp_wml.utils.IconUtils;
 import com.lantu.andorid.mvp_wml.utils.Logger;
 import com.lantu.andorid.mvp_wml.utils.ToastUtils;
@@ -40,6 +41,9 @@ public class AndroidApplication extends DefaultApplicationLike {
     private static String IOCN_VERSION_CODE = ""; // 桌面图标版本
 
     private RxBus mRxBus = new RxBus();
+
+    private static AudioPlayerManager sAudioPlayerManager;
+
     public AndroidApplication(Application application, int tinkerFlags, boolean tinkerLoadVerifyFlag, long applicationStartElapsedTime, long applicationStartMillisTime, Intent tinkerResultIntent) {
         super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime, applicationStartMillisTime, tinkerResultIntent);
 
@@ -56,6 +60,7 @@ public class AndroidApplication extends DefaultApplicationLike {
         _initConfig();
         _initX5Sdk();
         _registerActivityLifecycleCallbacks();
+        _initAudioPlayerManager();
     }
 
     /**
@@ -179,6 +184,23 @@ public class AndroidApplication extends DefaultApplicationLike {
                 }
             });
         }
+    }
+
+    /**
+     * 初始化播放管理器
+     */
+    private void _initAudioPlayerManager(){
+        if (sAudioPlayerManager == null){
+            sAudioPlayerManager = new AudioPlayerManager(getContext());
+        }
+    }
+
+    /**
+     * 获取播放管理
+     * @return
+     */
+    public static AudioPlayerManager getAudioPlayerManager(){
+        return sAudioPlayerManager;
     }
 
     public static void setIcon(String code){

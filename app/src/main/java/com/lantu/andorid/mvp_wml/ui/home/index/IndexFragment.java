@@ -10,11 +10,9 @@ import com.lantu.andorid.mvp_wml.R;
 import com.lantu.andorid.mvp_wml.api.bean.NewsInfo;
 import com.lantu.andorid.mvp_wml.injector.components.DaggerIndexComponent;
 import com.lantu.andorid.mvp_wml.injector.modules.IndexModule;
+import com.lantu.andorid.mvp_wml.ui.audio.AudioActivity;
 import com.lantu.andorid.mvp_wml.ui.base.BaseFragment;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
-import com.lantu.andorid.mvp_wml.ui.icontest.IconSwitchActivity;
-import com.lantu.andorid.mvp_wml.ui.other.ScrollViewActivity;
-import com.lantu.andorid.mvp_wml.ui.share.ShareActivity;
 
 
 import java.util.List;
@@ -70,7 +68,7 @@ public class IndexFragment extends BaseFragment<IBasePresenter> implements IInde
 
 //                ScrollViewActivity.launcher(getActivity());
 
-                ShareActivity.launcher(getActivity());
+                AudioActivity.launcher(getActivity());
 
             }
         });

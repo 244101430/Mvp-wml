@@ -41,4 +41,8 @@
 
     <dimen name="edit_layout_height">50dp</dimen>
     <dimen name="toolbar_padding_top">25dp</dimen>
+
+
+    <dimen name="pop_height">40dp</dimen>
+    <dimen name="pop_Padding">10dp</dimen>
 </resources>

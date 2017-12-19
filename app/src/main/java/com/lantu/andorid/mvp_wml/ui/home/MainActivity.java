@@ -1,6 +1,8 @@
 package com.lantu.andorid.mvp_wml.ui.home;
 
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
@@ -10,6 +12,7 @@ import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.lantu.andorid.mvp_wml.R;
+import com.lantu.andorid.mvp_wml.service.AudioPlayerService;
 import com.lantu.andorid.mvp_wml.ui.base.BaseActivity;
 import com.lantu.andorid.mvp_wml.ui.home.index.IndexFragment;
 import com.lantu.andorid.mvp_wml.ui.home.information.InformationFragment;
@@ -122,5 +125,12 @@ public class MainActivity extends BaseActivity {
         } else {
             finish();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.cancel(AudioPlayerService.mNotificationPlayBarId);
     }
 }
