@@ -8,16 +8,22 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.multidex.MultiDex;
 
+import com.dl7.downloaderlib.DownloadConfig;
+import com.dl7.downloaderlib.FileDownloader;
 import com.dl7.tinkerlib.Log.MyLogImp;
 import com.dl7.tinkerlib.util.TinkerManager;
 import com.lantu.andorid.mvp_wml.api.RetrofitService;
 import com.lantu.andorid.mvp_wml.injector.components.ApplicationComponent;
 import com.lantu.andorid.mvp_wml.injector.components.DaggerApplicationComponent;
 import com.lantu.andorid.mvp_wml.injector.modules.ApplicationModule;
+import com.lantu.andorid.mvp_wml.loacl.table.DaoMaster;
+import com.lantu.andorid.mvp_wml.loacl.table.DaoSession;
+import com.lantu.andorid.mvp_wml.loacl.table.VideoInfoDao;
 import com.lantu.andorid.mvp_wml.rxbus.RxBus;
 import com.lantu.andorid.mvp_wml.ui.audio.AudioPlayerManager;
 import com.lantu.andorid.mvp_wml.utils.IconUtils;
 import com.lantu.andorid.mvp_wml.utils.Logger;
+import com.lantu.andorid.mvp_wml.utils.PreferencesUtils;
 import com.lantu.andorid.mvp_wml.utils.ToastUtils;
 import com.tencent.smtt.sdk.QbSdk;
 import com.tencent.tinker.anno.DefaultLifeCycle;
@@ -26,6 +32,10 @@ import com.tencent.tinker.lib.tinker.TinkerInstaller;
 import com.tencent.tinker.loader.app.DefaultApplicationLike;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 
+import org.greenrobot.greendao.database.Database;
+
+import java.io.File;
+
 /**
  * Created by wml8743 on 2017/8/31.
  */
@@ -33,13 +43,15 @@ import com.tencent.tinker.loader.shareutil.ShareConstants;
 @DefaultLifeCycle(application = "com.lantu.android.mvp_wml.MvpApplication", flags = ShareConstants.TINKER_ENABLE_ALL, loadVerifyFlag = false)
 public class AndroidApplication extends DefaultApplicationLike {
 
+    private static final String DB_NAME = "mvp-db";
+
     private static Context sContext;
     private static ApplicationComponent sAppComponent;
     
     private int activityAount = 0; // 当前Acitity个数
     private boolean isForeground; // 是否在前台 true=处于前台，false=处于后台
     private static String IOCN_VERSION_CODE = ""; // 桌面图标版本
-
+    private DaoSession mDaoSession;
     private RxBus mRxBus = new RxBus();
 
     private static AudioPlayerManager sAudioPlayerManager;
@@ -56,6 +68,7 @@ public class AndroidApplication extends DefaultApplicationLike {
     @Override
     public void onCreate() {
         super.onCreate();
+        _initDatabase();
         _initInjector();
         _initConfig();
         _initX5Sdk();
@@ -76,10 +89,21 @@ public class AndroidApplication extends DefaultApplicationLike {
         return sContext;
     }
 
+    /**
+     * 初始化数据库
+     */
+    private void _initDatabase(){
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(getApplication(), DB_NAME);
+        Database database = helper.getWritableDb();
+        mDaoSession = new DaoMaster(database).newSession();
+    }
+    /**
+     * 初始化注射器
+     */
     private void _initInjector() {
         // 这里不做注入操作，只提供一些全局单例数据
         sAppComponent = DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(this, mRxBus))
+                .applicationModule(new ApplicationModule(this, mDaoSession, mRxBus))
                 .build();
     }
 
@@ -90,6 +114,11 @@ public class AndroidApplication extends DefaultApplicationLike {
 
         RetrofitService.init();
         ToastUtils.init(getApplication());
+
+        DownloaderWrapper.init(mRxBus, mDaoSession.getVideoInfoDao());
+        FileDownloader.init(getApplication());
+        DownloadConfig config = new DownloadConfig.Builder().setDownloadDir(PreferencesUtils.getSavePath(getApplication()) + File.separator + "video/").build();
+        FileDownloader.setConfig(config);
     }
 
     @Override

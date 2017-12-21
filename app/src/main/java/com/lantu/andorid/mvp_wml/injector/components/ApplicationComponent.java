@@ -3,6 +3,7 @@ package com.lantu.andorid.mvp_wml.injector.components;
 import android.content.Context;
 
 import com.lantu.andorid.mvp_wml.injector.modules.ApplicationModule;
+import com.lantu.andorid.mvp_wml.loacl.table.DaoSession;
 import com.lantu.andorid.mvp_wml.rxbus.RxBus;
 
 import javax.inject.Singleton;
@@ -18,4 +19,5 @@ import dagger.Component;
 public interface ApplicationComponent {
     Context getContext();
     RxBus getRxBus();
+    DaoSession getDaoSession();
 }

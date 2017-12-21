@@ -13,6 +13,7 @@ import com.lantu.andorid.mvp_wml.injector.modules.IndexModule;
 import com.lantu.andorid.mvp_wml.ui.audio.AudioActivity;
 import com.lantu.andorid.mvp_wml.ui.base.BaseFragment;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
+import com.lantu.andorid.mvp_wml.ui.test.download.DownloadActivity;
 
 
 import java.util.List;
@@ -68,7 +69,9 @@ public class IndexFragment extends BaseFragment<IBasePresenter> implements IInde
 
 //                ScrollViewActivity.launcher(getActivity());
 
-                AudioActivity.launcher(getActivity());
+//                AudioActivity.launcher(getActivity());
+
+                DownloadActivity.launcher(getActivity());
 
             }
         });

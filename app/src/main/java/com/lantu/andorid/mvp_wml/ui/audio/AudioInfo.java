@@ -1,12 +1,20 @@
 package com.lantu.andorid.mvp_wml.ui.audio;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.dl7.downloaderlib.model.DownloadStatus;
+
+import org.greenrobot.greendao.annotation.Entity;
+
 import java.io.Serializable;
+import org.greenrobot.greendao.annotation.Generated;
 
 /**
  * Created by wml8743 on 2017/12/14.
  */
 
-public class AudioInfo implements Serializable{
+public class AudioInfo {
 
     /**
      *

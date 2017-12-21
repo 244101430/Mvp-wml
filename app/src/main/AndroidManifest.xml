@@ -23,10 +23,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
-
-
-        <service android:name=".service.AudioPlayerService" android:enabled="true" android:exported="true"/>
-
+        <service
+            android:name=".service.AudioPlayerService"
+            android:enabled="true"
+            android:exported="true" />
 
         <activity android:name=".ui.home.MainActivity">
             <intent-filter>
@@ -92,7 +92,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.audio.AudioActivity"></activity>
+        <activity android:name=".ui.audio.AudioActivity" />
+        <activity android:name=".ui.test.download.DownloadActivity"></activity>
     </application>
 
 </manifest>

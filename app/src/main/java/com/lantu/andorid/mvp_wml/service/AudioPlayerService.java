@@ -26,9 +26,6 @@ import com.lantu.andorid.mvp_wml.ui.home.MainActivity;
 import com.lantu.andorid.mvp_wml.utils.Logger;
 import com.lantu.andorid.mvp_wml.utils.ToastUtils;
 
-import java.io.File;
-import java.io.IOException;
-
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 

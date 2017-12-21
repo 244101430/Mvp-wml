@@ -1,7 +1,6 @@
 package com.lantu.andorid.mvp_wml.ui.audio;
 
 import android.app.Activity;
-import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ import com.lantu.andorid.mvp_wml.ui.base.BaseSwipeBackActivity;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
 import com.lantu.andorid.mvp_wml.ui.base.IBaseView;
 import com.lantu.andorid.mvp_wml.utils.Logger;
-import com.lantu.andorid.mvp_wml.utils.SDCardUtils;
 import com.lantu.andorid.mvp_wml.widget.LrcSeekBar;
 
 import java.util.ArrayList;
@@ -31,7 +29,7 @@ import butterknife.OnClick;
  */
 public class AudioActivity extends BaseSwipeBackActivity<IBasePresenter> implements IBaseView, View.OnClickListener {
 
-        private String url = "http://noah-video-cdn.ifaclub.com/20171219.mp3?e=1513701975&token=_gsUZbrLzcDO-vHRLojw0holcS0oaICOyrkDiMOh:b9TKM7CLsS0GirXTjfgnLzaVgso=";
+    private String url = "http://noah-video-cdn.ifaclub.com/20171219.mp3?e=1513701975&token=_gsUZbrLzcDO-vHRLojw0holcS0oaICOyrkDiMOh:b9TKM7CLsS0GirXTjfgnLzaVgso=";
 //    private String url = SDCardUtils.getRootPath() + "/test.mp3";
 
     /**
@@ -131,11 +129,11 @@ public class AudioActivity extends BaseSwipeBackActivity<IBasePresenter> impleme
             @Override
             public void dragFinish() {
                 int playStatus = audioPlayerManager.getPlayStatus();
-                if (playStatus == AudioPlayerManager.PLAYING){
+                if (playStatus == AudioPlayerManager.PLAYING) {
                     // 正在播放
-                    if (audioPlayerManager.getCurAudioMessage() != null){
+                    if (audioPlayerManager.getCurAudioMessage() != null) {
                         AudioMessage audioMessage = audioPlayerManager.getCurAudioMessage();
-                        if (audioMessage != null){
+                        if (audioMessage != null) {
                             audioMessage.setPlayProgress(seekBar.getProgress());
                             Intent resumeIntent = new Intent(AudioBroadcastReceiver.ACTION_SEEKTOMUSIC);
                             resumeIntent.putExtra(AudioMessage.KEY, audioMessage);
@@ -143,8 +141,8 @@ public class AudioActivity extends BaseSwipeBackActivity<IBasePresenter> impleme
                             sendBroadcast(resumeIntent);
                         }
                     }
-                }else {
-                    if (audioPlayerManager.getCurAudioMessage() != null){
+                } else {
+                    if (audioPlayerManager.getCurAudioMessage() != null) {
                         audioPlayerManager.getCurAudioMessage().setPlayProgress(seekBar.getProgress());
                     }
                 }
@@ -162,9 +160,9 @@ public class AudioActivity extends BaseSwipeBackActivity<IBasePresenter> impleme
      */
     private void initAudionManager() {
 
-        mDatas.add(new AudioInfo("1", "1", url));
-        mDatas.add(new AudioInfo("2", "2", url));
-        mDatas.add(new AudioInfo("3", "3", url));
+        mDatas.add(new AudioInfo("1", "音频一", url));
+        mDatas.add(new AudioInfo("2", "音频二", url));
+        mDatas.add(new AudioInfo("3", "音频三", url));
 
         audioPlayerManager = AndroidApplication.getAudioPlayerManager();
         audioPlayerManager.setCurAudioInfos(mDatas);
@@ -222,7 +220,7 @@ public class AudioActivity extends BaseSwipeBackActivity<IBasePresenter> impleme
                 break;
             case AudioBroadcastReceiver.ACTION_SERVICE_PLAYINGMUSIC:// 播放中
                 AudioMessage audioMessage1 = audioPlayerManager.getCurAudioMessage();
-                if (audioMessage1 != null){
+                if (audioMessage1 != null) {
                     seekBar.setProgress((int) audioMessage1.getPlayProgress());
                     seekBar.setMax((int) audioMessage1.getPlayProgressTotal());
                 }
@@ -237,19 +235,19 @@ public class AudioActivity extends BaseSwipeBackActivity<IBasePresenter> impleme
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_play:
-                if (audioPlayerManager.getPlayStatus() == AudioPlayerManager.PAUSE){
+                if (audioPlayerManager.getPlayStatus() == AudioPlayerManager.PAUSE) {
                     AudioInfo audioInfo = audioPlayerManager.getCurAudioInfo();
-                    if (audioInfo != null){
+                    if (audioInfo != null) {
                         AudioMessage audioMessage = audioPlayerManager.getCurAudioMessage();
                         Intent reusmeIntent = new Intent(AudioBroadcastReceiver.ACTION_RESUMEMUSIC);
                         reusmeIntent.putExtra(AudioMessage.KEY, audioMessage);
                         reusmeIntent.setFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
                         sendBroadcast(reusmeIntent);
                     }
-                }else if (audioPlayerManager.getPlayStatus() == AudioPlayerManager.PLAYING){
+                } else if (audioPlayerManager.getPlayStatus() == AudioPlayerManager.PLAYING) {
                     onClick(findViewById(R.id.bt_pause));
-                }else {
-                    AudioMessage audioMessage =  new AudioMessage();
+                } else {
+                    AudioMessage audioMessage = new AudioMessage();
                     audioMessage.setAudioInfo(mDatas.get(0));
 
                     audioPlayerManager.setCurAudioInfos(mDatas);
