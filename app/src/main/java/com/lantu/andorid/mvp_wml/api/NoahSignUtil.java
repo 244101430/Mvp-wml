@@ -11,11 +11,7 @@ import java.util.HashMap;
 public class NoahSignUtil {
 
     public static HashMap<String, String> sign(String postdata) {
-        String sid = "c9da1b8a00ee4d68aa579c7ca7e09224";
-        String body = postdata;
-        String t = Long.toString(System.currentTimeMillis() / 1000);
 
-        String oriStr = "king-ifa@" + body + "@" + sid + "@" + t;
         String md5Str = MD5Util.md5(oriStr);
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("X-KGW-SID", sid);
