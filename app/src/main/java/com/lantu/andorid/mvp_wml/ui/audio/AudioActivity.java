@@ -29,7 +29,7 @@ import butterknife.OnClick;
  */
 public class AudioActivity extends BaseSwipeBackActivity<IBasePresenter> implements IBaseView, View.OnClickListener {
 
-    private String url = "http://noah-video-cdn.ifaclub.com/20171219.mp3?e=1513701975&token=_gsUZbrLzcDO-vHRLojw0holcS0oaICOyrkDiMOh:b9TKM7CLsS0GirXTjfgnLzaVgso=";
+    private String url = "";
 //    private String url = SDCardUtils.getRootPath() + "/test.mp3";
 
     /**
