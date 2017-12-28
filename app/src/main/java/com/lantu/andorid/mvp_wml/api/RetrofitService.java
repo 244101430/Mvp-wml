@@ -76,7 +76,7 @@ public class RetrofitService {
     private static ITestApi sNewsService;
 
 
-    private static final String NOAH_HOST = "";
+    private static final String NOAH_HOST = "http://c.3g.163.com/"; // 测试地址
     private static INoahApi sNoahService;
 
     /**
