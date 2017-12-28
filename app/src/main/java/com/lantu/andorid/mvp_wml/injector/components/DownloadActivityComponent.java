@@ -8,7 +8,7 @@ import com.lantu.andorid.mvp_wml.ui.test.download.DownloadActivity;
 import dagger.Component;
 
 /**
- * Created by wml8743 on 2017/12/21.
+ * Created by wml on 2017/12/21.
  */
 @PerActivity
 @Component(dependencies = ApplicationComponent.class, modules = DownloadActivityModule.class)

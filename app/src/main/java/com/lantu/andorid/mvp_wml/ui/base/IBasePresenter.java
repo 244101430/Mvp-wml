@@ -1,7 +1,7 @@
 package com.lantu.andorid.mvp_wml.ui.base;
 
 /**
- * Created by wml8743 on 2017/8/31.
+ * Created by wml on 2017/8/31.
  * 基础 Presenter
  */
 public interface IBasePresenter {

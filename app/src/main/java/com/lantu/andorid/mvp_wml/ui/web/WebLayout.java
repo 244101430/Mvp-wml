@@ -11,7 +11,7 @@ import com.lantu.andorid.mvp_wml.R;
 import com.tencent.smtt.sdk.WebView;
 
 /**
- * Created by wml8743 on 2017/10/19.
+ * Created by wml on 2017/10/19.
  */
 
 public class WebLayout implements IWebLayout {

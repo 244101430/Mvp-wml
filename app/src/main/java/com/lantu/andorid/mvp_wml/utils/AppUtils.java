@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 
 /**
  * 跟App相关的辅助类
- * Created by wml8743 on 2017/12/6.
+ * Created by wml on 2017/12/6.
  */
 
 public class AppUtils {

@@ -11,7 +11,7 @@ import rx.Subscriber;
 import rx.functions.Action0;
 
 /**
- * Created by wml8743 on 2017/10/10.
+ * Created by wml on 2017/10/10.
  */
 
 public class IndexPresenter implements IBasePresenter {

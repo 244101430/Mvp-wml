@@ -3,7 +3,7 @@ package com.lantu.andorid.mvp_wml.widget;
 import com.flyco.tablayout.listener.CustomTabEntity;
 
 /**
- * Created by wml8743 on 2017/10/9.
+ * Created by wml on 2017/10/9.
  */
 
 public class TabEntity implements CustomTabEntity{

@@ -10,7 +10,7 @@ import me.shaohui.shareutil.login.LoginPlatform;
 import me.shaohui.shareutil.login.LoginResult;
 
 /**
- * Created by wml8743 on 2017/10/19.
+ * Created by wml on 2017/10/19.
  */
 
 public class SharaPresenter implements ISharePresenter{

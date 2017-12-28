@@ -5,7 +5,7 @@ import com.lantu.andorid.mvp_wml.ui.base.IBaseView;
 import me.shaohui.shareutil.login.LoginResult;
 
 /**
- * Created by wml8743 on 2017/10/19.
+ * Created by wml on 2017/10/19.
  */
 
 public interface IShareView extends IBaseView{

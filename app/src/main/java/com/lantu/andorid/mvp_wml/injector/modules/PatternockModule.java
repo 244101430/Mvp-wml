@@ -9,7 +9,7 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Created by wml8743 on 2017/10/16.
+ * Created by wml on 2017/10/16.
  */
 @Module
 public class PatternockModule {

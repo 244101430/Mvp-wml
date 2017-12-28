@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 音频播放处理类
- * Created by wml8743 on 2017/12/14.
+ * Created by wml on 2017/12/14.
  */
 
 public class AudioPlayerManager {

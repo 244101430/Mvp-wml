@@ -9,7 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/downloaderLib" />
             <option value="$PROJECT_DIR$/gsyVideoPlayer-java" />
+            <option value="$PROJECT_DIR$/nicedialog" />
             <option value="$PROJECT_DIR$/patternlockview" />
             <option value="$PROJECT_DIR$/shareutil" />
             <option value="$PROJECT_DIR$/tinkerLib" />

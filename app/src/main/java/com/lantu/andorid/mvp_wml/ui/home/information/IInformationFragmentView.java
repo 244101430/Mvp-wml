@@ -4,7 +4,7 @@ import com.lantu.andorid.mvp_wml.api.bean.NewsInfo;
 import com.lantu.andorid.mvp_wml.ui.base.IBaseView;
 
 /**
- * Created by wml8743 on 2017/12/7.
+ * Created by wml on 2017/12/7.
  */
 
 public interface IInformationFragmentView extends IBaseView{

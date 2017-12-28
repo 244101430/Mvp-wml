@@ -15,7 +15,7 @@ import rx.Observable;
 import static com.lantu.andorid.mvp_wml.api.RetrofitService.AVOID_HTTP403_FORBIDDEN;
 
 /**
- * Created by wml8743 on 2017/12/7.
+ * Created by wml on 2017/12/7.
  */
 
 public interface INoahApi {

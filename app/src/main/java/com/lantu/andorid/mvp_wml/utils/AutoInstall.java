@@ -8,7 +8,7 @@ import java.io.File;
 
 /**
  * apk安装工具类
- * Created by wml8743 on 2017/12/11.
+ * Created by wml on 2017/12/11.
  */
 
 public class AutoInstall {

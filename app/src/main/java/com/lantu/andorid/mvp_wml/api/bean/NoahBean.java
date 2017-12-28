@@ -1,7 +1,7 @@
 package com.lantu.andorid.mvp_wml.api.bean;
 
 /**
- * Created by wml8743 on 2017/9/1.
+ * Created by wml on 2017/9/1.
  */
 
 public class NoahBean {

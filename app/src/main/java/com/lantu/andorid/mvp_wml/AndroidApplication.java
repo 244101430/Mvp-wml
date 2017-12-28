@@ -37,7 +37,7 @@ import org.greenrobot.greendao.database.Database;
 import java.io.File;
 
 /**
- * Created by wml8743 on 2017/8/31.
+ * Created by wml on 2017/8/31.
  */
 
 @DefaultLifeCycle(application = "com.lantu.android.mvp_wml.MvpApplication", flags = ShareConstants.TINKER_ENABLE_ALL, loadVerifyFlag = false)

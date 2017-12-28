@@ -13,7 +13,7 @@ import rx.Subscriber;
 import rx.functions.Action0;
 
 /**
- * Created by wml8743 on 2017/12/7.
+ * Created by wml on 2017/12/7.
  */
 
 public class InformationFragmentPresenter implements IInformationFragmentPresenter{

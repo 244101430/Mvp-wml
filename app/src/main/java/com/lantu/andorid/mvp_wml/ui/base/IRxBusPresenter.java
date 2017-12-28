@@ -3,7 +3,7 @@ package com.lantu.andorid.mvp_wml.ui.base;
 import rx.functions.Action1;
 
 /**
- * Created by wml8743 on 2017/8/31.
+ * Created by wml on 2017/8/31.
  * RxBus Presenter
  */
 public interface IRxBusPresenter extends IBasePresenter {

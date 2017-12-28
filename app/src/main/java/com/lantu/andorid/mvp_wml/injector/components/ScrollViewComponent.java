@@ -9,7 +9,7 @@ import com.lantu.andorid.mvp_wml.ui.screenshot.ScreenshotActivity;
 import dagger.Component;
 
 /**
- * Created by wml8743 on 2017/10/18.
+ * Created by wml on 2017/10/18.
  */
 @PerActivity
 @Component(modules = ScrollViewModule.class)

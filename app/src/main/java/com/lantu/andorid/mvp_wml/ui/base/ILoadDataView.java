@@ -1,7 +1,7 @@
 package com.lantu.andorid.mvp_wml.ui.base;
 
 /**
- * Created by wml8743 on 2017/8/31.
+ * Created by wml on 2017/8/31.
  * 加载数据的界面接口
  */
 public interface ILoadDataView<T> extends IBaseView {

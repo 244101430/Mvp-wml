@@ -3,7 +3,7 @@ package com.lantu.andorid.mvp_wml.ui.share;
 import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
 
 /**
- * Created by wml8743 on 2017/10/19.
+ * Created by wml on 2017/10/19.
  */
 
 public interface ISharePresenter<T> extends IBasePresenter {

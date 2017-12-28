@@ -11,7 +11,7 @@ import java.io.Serializable;
 import org.greenrobot.greendao.annotation.Generated;
 
 /**
- * Created by wml8743 on 2017/12/14.
+ * Created by wml on 2017/12/14.
  */
 
 public class AudioInfo {

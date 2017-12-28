@@ -6,7 +6,7 @@ import com.lantu.andorid.mvp_wml.utils.StringUtils;
 
 /**
  * 手势密码
- * Created by wml8743 on 2017/10/16.
+ * Created by wml on 2017/10/16.
  */
 
 public class PatternlockPresenter implements IPatternockPresenter{

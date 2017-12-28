@@ -18,7 +18,7 @@ import static com.lantu.andorid.mvp_wml.api.RetrofitService.CACHE_CONTROL_NETWOR
 
 
 /**
- * Created by wml8743 on 2017/9/1.
+ * Created by wml on 2017/9/1.
  */
 
 public interface ITestApi {

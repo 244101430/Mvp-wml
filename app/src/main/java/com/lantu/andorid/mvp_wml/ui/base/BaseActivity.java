@@ -41,7 +41,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Created by wml8743 on 2017/8/31.
+ * Created by wml on 2017/8/31.
  */
 
 public abstract class BaseActivity<T extends IBasePresenter> extends RxAppCompatActivity implements IBaseView, EmptyLayout.OnRetryListener, NetBroadcastReceiver.NetEvevt {

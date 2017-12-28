@@ -30,7 +30,7 @@ import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
 /**
- * Created by wml8743 on 2017/12/14.
+ * Created by wml on 2017/12/14.
  */
 
 public class AudioPlayerService extends Service {

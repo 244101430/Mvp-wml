@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import com.lantu.andorid.mvp_wml.ui.base.IBaseView;
 
 /**
- * Created by wml8743 on 2017/10/18.
+ * Created by wml on 2017/10/18.
  */
 
 public interface IScreenshotView extends IBaseView {

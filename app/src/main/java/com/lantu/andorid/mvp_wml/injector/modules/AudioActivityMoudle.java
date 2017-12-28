@@ -9,7 +9,7 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Created by wml8743 on 2017/12/11.
+ * Created by wml on 2017/12/11.
  */
 @Module
 public class AudioActivityMoudle {

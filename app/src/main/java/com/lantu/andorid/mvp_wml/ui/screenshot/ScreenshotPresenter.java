@@ -3,7 +3,7 @@ package com.lantu.andorid.mvp_wml.ui.screenshot;
 import com.lantu.andorid.mvp_wml.widget.CertificateView;
 
 /**
- * Created by wml8743 on 2017/10/18.
+ * Created by wml on 2017/10/18.
  */
 
 public class ScreenshotPresenter implements IScreenshotPresenter{

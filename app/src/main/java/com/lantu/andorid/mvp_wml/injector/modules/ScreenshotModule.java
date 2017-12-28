@@ -9,7 +9,7 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Created by wml8743 on 2017/10/18.
+ * Created by wml on 2017/10/18.
  */
 @Module
 public class ScreenshotModule {

@@ -10,7 +10,7 @@ import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Generated;
 
 /**
- * Created by wml8743 on 2017/12/21.
+ * Created by wml on 2017/12/21.
  */
 @Entity
 public class VideoInfo implements Parcelable{

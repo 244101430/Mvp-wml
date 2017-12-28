@@ -7,7 +7,7 @@ import com.lantu.andorid.mvp_wml.ui.audio.AudioActivity;
 import dagger.Component;
 
 /**
- * Created by wml8743 on 2017/12/11.
+ * Created by wml on 2017/12/11.
  */
 @PerActivity
 @Component(modules = AudioActivityMoudle.class)

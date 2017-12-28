@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * 通知栏广播
- * Created by wml8743 on 2017/12/14.
+ * Created by wml on 2017/12/14.
  */
 
 public class NotificationReceiver {

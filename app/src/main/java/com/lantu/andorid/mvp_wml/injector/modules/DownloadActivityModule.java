@@ -15,7 +15,7 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Created by wml8743 on 2017/12/21.
+ * Created by wml on 2017/12/21.
  */
 @Module
 public class DownloadActivityModule {

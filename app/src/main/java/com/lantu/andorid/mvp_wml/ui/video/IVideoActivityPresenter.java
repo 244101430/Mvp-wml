@@ -7,7 +7,7 @@ import com.lantu.andorid.mvp_wml.ui.base.IBasePresenter;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
 /**
- * Created by wml8743 on 2017/12/11.
+ * Created by wml on 2017/12/11.
  */
 
 public interface IVideoActivityPresenter extends IBasePresenter{

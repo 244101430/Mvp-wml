@@ -9,7 +9,7 @@ import com.lantu.andorid.mvp_wml.ui.base.BaseActivity;
 import com.lantu.andorid.mvp_wml.utils.NetUtil;
 
 /**
- * Created by wml8743 on 2017/10/13.
+ * Created by wml on 2017/10/13.
  */
 
 public class NetBroadcastReceiver extends BroadcastReceiver {

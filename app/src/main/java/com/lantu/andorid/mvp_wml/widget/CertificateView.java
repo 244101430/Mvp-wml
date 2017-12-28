@@ -19,7 +19,7 @@ import com.lantu.andorid.mvp_wml.utils.ShotUtil;
 import butterknife.BindView;
 
 /**
- * Created by wml8743 on 2017/10/18.
+ * Created by wml on 2017/10/18.
  */
 
 public class CertificateView extends FrameLayout{

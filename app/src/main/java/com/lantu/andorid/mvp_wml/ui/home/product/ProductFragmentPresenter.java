@@ -11,7 +11,7 @@ import rx.Subscription;
 import rx.functions.Action1;
 
 /**
- * Created by wml8743 on 2017/12/7.
+ * Created by wml on 2017/12/7.
  */
 
 public class ProductFragmentPresenter implements IRxBusPresenter{

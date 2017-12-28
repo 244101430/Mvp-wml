@@ -17,7 +17,7 @@ import me.shaohui.shareutil.share.SharePlatform;
 
 /**
  * 分享弹出框
- * Created by wml8743 on 2017/10/18.
+ * Created by wml on 2017/10/18.
  */
 public class ShareBottomDialog extends BaseNiceDialog {
 

@@ -15,7 +15,7 @@ import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
 /**
  * 视频页面逻辑
- * Created by wml8743 on 2017/12/11.
+ * Created by wml on 2017/12/11.
  */
 
 public class VideoActivityPresenter implements IVideoActivityPresenter {

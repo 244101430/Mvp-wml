@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * 截图工具
- * Created by wml8743 on 2017/10/18.
+ * Created by wml on 2017/10/18.
  */
 
 public class ShotUtil {
